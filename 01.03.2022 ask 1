@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int sum1=0,sum2=0;
+
+void su(int dice)
+{
+	if(dice==1)
+	{
+		sum1++;
+	}
+	else if(dice == 2)
+	{
+		sum2++;
+	}
+	
+}
+
+void zero()
+{
+	sum1 = 0;
+	sum2 = 0;
+	 
+}
+
+int main(int argc, char *argv[]) {
+	int i,dice;
+	FILE *fp;
+	
+	fp = fopen("ergastirio.txt","w");
+	
+	for(i=0;i<10;i++)
+	{
+		dice = 1+rand()%2;
+		su(dice);
+	}
+	fprintf(fp,"1 = %d\n2 = %d\n",sum1,sum2);
+	zero();
+	fprintf(fp,"\n\n");
+	
+	
+	
+	for(i=0;i<100;i++)
+	{
+		dice = 1+rand()%2;
+		su(dice);
+	}
+	fprintf(fp,"1 = %d\n2 = %d\n",sum1,sum2);
+	zero();
+	fprintf(fp,"\n\n");
+	
+	
+	
+		for(i=0;i<1000;i++)
+	{
+		dice = 1+rand()%2;
+		su(dice);
+	}
+	fprintf(fp,"1 = %d\n2 = %d\n",sum1,sum2);
+	zero();
+	fprintf(fp,"\n\n");
+	
+		for(i=0;i<10000;i++)
+	{
+		dice = 1+rand()%2;
+		su(dice);
+	}
+	fprintf(fp,"1 = %d\n2 = %d",sum1,sum2);
+	zero();
+	fprintf(fp,"\n\n");
+	
+	return 0;
+}
