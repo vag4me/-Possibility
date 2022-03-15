@@ -1,0 +1,101 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int sum1=0,sum2=0,sum3=0,sum4=0,sum5=0,sum6=0,sum7=0,sum8=0,sum9=0,sum10=0;
+
+void su(float coin)
+{
+	if(coin <= 0.1)
+	{
+		sum1++;
+	}
+	else if(coin <= 0.2)
+	{
+		sum2++;
+	}
+	else if(coin <= 0.3)
+	{
+		sum3++;
+	}
+	else if(coin <= 0.4)
+	{
+		sum4++;
+	}
+	else if(coin <= 0.5)
+	{
+		sum5++;
+	}
+	else if(coin <= 0.6)
+	{
+		sum6++;
+	}
+	else if(coin <= 0.7)
+	{
+		sum7++;
+	}
+	else if( coin <= 0.8)
+	{
+		sum8++;
+	}
+	else if(coin <= 0.9)
+	{
+		sum9++;
+	}
+	else if(coin <= 1)
+	{
+		sum10++;
+	}
+}
+
+void zero()
+{
+	sum1=0;
+	sum2=0;
+	sum3=0;
+	sum4=0;
+	sum5=0;
+	sum6=0;
+	sum7=0;
+	sum8=0;
+	sum9=0;
+	sum10=0;
+}
+
+int main(int argc, char *argv[]) {
+	int i;
+	float dice;
+	FILE *fp;
+	
+	fp = fopen("ergastirio.txt","w");
+	
+	for(i=0;i<100;i++)
+	{
+		dice = (float)rand()/RAND_MAX;
+		su(dice);
+	}
+	fprintf(fp,"%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n",sum1,sum2,sum3,sum4,sum5,sum6,sum7,sum8,sum9,sum10);
+	zero();
+	fprintf(fp,"\n\n");
+	
+	for(i=0;i<1000;i++)
+	{
+		dice = (float)rand()/RAND_MAX;
+		su(dice);
+	}
+	fprintf(fp,"%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n",sum1,sum2,sum3,sum4,sum5,sum6,sum7,sum8,sum9,sum10);
+	zero();
+	fprintf(fp,"\n\n");
+	
+	for(i=0;i<10000;i++)
+	{
+		dice = (float)rand()/RAND_MAX;
+		su(dice);
+	}
+	fprintf(fp,"%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n",sum1,sum2,sum3,sum4,sum5,sum6,sum7,sum8,sum9,sum10);
+	zero();
+	fprintf(fp,"\n\n");
+	
+	
+	
+	return 0;
+}
