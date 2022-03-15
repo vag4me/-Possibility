@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int sum1=0,sum2=0,sum3=0,sum4=0,sum5=0,sum6=0;
+
+void su(int dice)
+{
+	if(dice==1)
+	{
+		sum1++;
+	}
+	else if(dice == 2)
+	{
+		sum2++;
+	}
+	else if(dice == 3)
+	{
+		sum3++;
+	}
+	else if(dice == 4)
+	{
+		sum4++;
+	}
+	else if(dice == 5)
+	{
+		sum5++;
+	}
+	else if(dice == 6)
+	{
+		sum6++;
+	}
+}
+
+void zero()
+{
+	sum1 = 0;
+	sum2 = 0;
+	sum3 = 0;
+	sum4 = 0;
+	sum5 = 0;
+	sum6 = 0; 
+}
+
+int main(int argc, char *argv[]) {
+	int i,dice;
+	FILE *fp;
+	
+	fp = fopen("ergastirio.txt","w");
+	
+	for(i=0;i<10;i++)
+	{
+		dice = 1+rand()%6;
+		su(dice);
+	}
+	fprintf(fp,"1 = %d\n2 = %d\n3 = %d\n4 = %d\n5 = %d\n6 = %d\n",sum1,sum2,sum3,sum4,sum5,sum6);
+	zero();
+	fprintf(fp,"\n\n");
+	
+	
+	
+	for(i=0;i<100;i++)
+	{
+		dice = 1+rand()%6;
+		su(dice);
+	}
+	fprintf(fp,"1 = %d\n2 = %d\n3 = %d\n4 = %d\n5 = %d\n6 = %d\n",sum1,sum2,sum3,sum4,sum5,sum6);
+	zero();
+	fprintf(fp,"\n\n");
+	
+	
+	
+		for(i=0;i<1000;i++)
+	{
+		dice = 1+rand()%6;
+		su(dice);
+	}
+	fprintf(fp,"1 = %d\n2 = %d\n3 = %d\n4 = %d\n5 = %d\n6 = %d\n",sum1,sum2,sum3,sum4,sum5,sum6);
+	zero();
+	fprintf(fp,"\n\n");
+	
+		for(i=0;i<10000;i++)
+	{
+		dice = 1+rand()%6;
+		su(dice);
+	}
+	fprintf(fp,"1 = %d\n2 = %d\n3 = %d\n4 = %d\n5 = %d\n6 = %d\n",sum1,sum2,sum3,sum4,sum5,sum6);
+	zero();
+	fprintf(fp,"\n\n");
+	
+	return 0;
+}
