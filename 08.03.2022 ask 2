@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+
+int main() {
+	int i;
+	float x,y,temp1,temp2,temp3,temp4;
+	
+	
+	for(i=0;i<=10000;i++)
+	{
+		x = (float)rand()/RAND_MAX;
+		
+		y = -log(1-x);
+		printf("A: %f\n",y);
+		
+		y = pow(x,2);
+		printf("b: %f\n",y);
+		
+		temp1 = (float)rand()/RAND_MAX;
+		
+		y = pow(x,2) + pow(temp1,2);
+		printf("c: %f\n",y);
+		
+		temp1 = (float)rand()/RAND_MAX;
+		temp2 = (float)rand()/RAND_MAX;
+		temp3 = (float)rand()/RAND_MAX;
+		temp4 = (float)rand()/RAND_MAX;
+		
+		y = pow(x,2) + pow(temp1,2) +pow(temp2,2) +pow(temp3,2) + pow(temp4,2);
+		printf("d: %f\n",y);	
+		      		
+	}
+	
+	return 0;
+}
