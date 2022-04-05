@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
+#include <math.h>
+
+double random2( float min, float max )
+{
+    float scale = rand() / (float) RAND_MAX; /* [0, 1.0] */
+    return min + scale * ( max - min );      /* [min, max] */
+}
+
+
+double mo(double num[10])
+{
+    int i;
+    float sum = 0;
+    srand(time(0));
+    
+    for(i = 0; i <= 10; i++)
+    {
+        sum = num[i] + sum;
+    }
+    return sum/10;
+}
+
+double diaspora(double num[10],double mo)
+{
+    int i;
+    double re = 0;
+    for(i = 0; i <= 10; i++)
+    {
+        re = pow((num[i] - mo),2) + re;
+    }
+    return re/10;
+}
+
+double apoklisi(double data[],double mo) {
+    double SD = 0.0;
+    int i;
+    
+    
+    for (i = 0; i < 10; ++i) {
+        SD += pow(data[i] - mo, 2);
+    }
+    return sqrt(SD / 10);
+}
+
+int main() {
+	
+	int i;
+	double number[10];
+	double sun,re2,re3;
+	
+	for(i = 0; i <= 10; i++)
+	{
+		number[i] =  random2(0,100);
+	}
+	
+	sun = mo(number);
+	printf("mesi timi = %f\n",sun);
+	
+	re2 = diaspora(number,sun);
+	printf("diaspora = %f\n",re2);
+	
+	re3 = apoklisi(number,sun);
+	printf("apoklisi = %f\n",re3);
+
+	
+	return 0;
+}
