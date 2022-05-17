@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int ar1[1000],i;
+int ar1[1000],i,ar2[1000],ar3[1000];
 
 
 int walks(int walker,int size)
@@ -48,6 +48,85 @@ int main() {
 	for(i = 0; i < 1000; i++)
 	{
 		walker = walks(walker,10);
+	}
+	
+	for(i=0;i<1000;i++)
+	{
+		printf("%d",ar1[i]);
+		fprintf(fp,"%d\n",ar1[i]);
+	}
+	
+	// 2
+	fprintf(fp,"\n\n\n");
+	
+		for(i = 0; i < 1000; i++)
+	{
+		ar1[i] = 0;
+	}
+	
+	for(i = 0; i < 1000; i++)
+	{
+		walker = walks(walker,50);
+	}
+	
+	for(i=0;i<1000;i++)
+	{
+		printf("%d",ar1[i]);
+		fprintf(fp,"%d\n",ar1[i]);
+	}
+	
+	// 3
+	
+	fprintf(fp,"\n\n\n");
+	
+		for(i = 0; i < 1000; i++)
+	{
+		ar1[i] = 0;
+	}
+	
+	for(i = 0; i < 1000; i++)
+	{
+		walker = walks(walker,100);
+	}
+	
+	for(i=0;i<1000;i++)
+	{
+		printf("%d",ar1[i]);
+		fprintf(fp,"%d\n",ar1[i]);
+	}
+	
+	//4
+	
+	fprintf(fp,"\n\n\n");
+	
+		for(i = 0; i < 1000; i++)
+	{
+		ar1[i] = 0;
+	}
+	
+	for(i = 0; i < 1000; i++)
+	{
+		walker = walks(walker,500);
+	}
+	
+	for(i=0;i<1000;i++)
+	{
+		printf("%d",ar1[i]);
+		fprintf(fp,"%d\n",ar1[i]);
+	}
+	
+	// 5
+	
+	fprintf(fp,"\n\n\n");
+	
+		for(i = 0; i < 1000; i++)
+	{
+		ar1[i] = 0;
+	}
+	
+	for(i = 0; i < 1000; i++)
+	{
+		walker = walks(walker,1000);
 	}
 	
 	for(i=0;i<1000;i++)
